@@ -1,73 +1,97 @@
-# React + TypeScript + Vite
+# KINA - The 2025 Athlete Manifesto Reader
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive, editorial-style web application designed to present the **"Are You the 2025 Athlete?"** manifesto.
 
-Currently, two official plugins are available:
+This project transforms the static manifesto content into an engaging digital experience, bridging the gap between a
+traditional landing page and a downloadable resource.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Project Status](https://img.shields.io/badge/status-active-success)
+![License](https://img.shields.io/badge/license-Copyright-blue)
 
-## React Compiler
+## 🏃‍♂️ About The Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+KINA is an AI Running Companion project. This repository hosts the interactive reader for its founding manifesto.
 
-## Expanding the ESLint configuration
+**Key Goals:**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Readability:** Provide a distraction-free, magazine-quality reading experience on mobile and desktop.
+2. **Conversion:** Integrate "Join Waitlist" calls-to-action seamlessly.
+3. **Distribution:** Allow users to generate a perfectly formatted A4 PDF directly from the browser using the native
+   print engine.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## ✨ Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* **⚡ Modern Tech Stack:** Built with React 18, TypeScript, and Vite for blazing fast performance.
+* **🎨 Custom Design System:**
+    * Strict adherence to the KINA palette (`#6A8EAE`, `#99C794`).
+    * Editorial typography pairing: *Merriweather* (Serif) for body text and *Inter* (Sans) for UI elements.
+* **print-to-PDF Engine:** Custom CSS `@media print` rules ensure the web page converts to a paginated, clean A4
+  document without UI clutter (buttons, navbars).
+* **📊 Reading Progress:** A sticky reading progress bar at the top of the viewport.
+* **📱 Fully Responsive:** Optimized for all screen sizes.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Getting Started
+
+### Prerequisites
+
+* Node.js (v18+ recommended)
+* npm
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/kmmania/kina-manifesto.git
+   cd kina-manifesto
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+   *Note: This project uses Tailwind CSS v3.4.*
+
+3. **Run locally:**
+   ```bash
+   npm run dev
+   ```
+   Open `http://localhost:5173` in your browser.
+
+### Building for Production
+
+To create a production-ready build:
+
+```bash
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 Design System
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The application uses a specific color palette defined in `src/types.ts` and applied via Tailwind:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+| Color | Hex | Usage |
+|-------|-----|-------|
+| **Blue** | `#6A8EAE` | Primary actions, highlights |
+| **Green** | `#99C794` | Secondary accents, progress bar |
+| **Dark Grey** | `#333333` | Primary text |
+| **Off White** | `#F8F8F8` | Page background |
+
+## 📂 Project Structure
+
 ```
+src/
+├── components/       # Reusable UI components
+│   ├── Header.tsx    # Sticky header with progress bar
+│   ├── ManifestoContent.tsx  # The core text content
+│   └── ...
+├── types.ts          # TypeScript definitions & Constants
+├── App.tsx           # Main layout
+└── index.css         # Tailwind directives & Print styles
+```
+
+## 📄 License & Copyright
+
+**Content:** © 2025 - Dac Linh Giao NGUYEN / KM Mania Research.  
+*The text content is protected by copyright but authorized for distribution in its entirety.*
+
+**Code:** This repository is the technical implementation of the KINA Manifesto Reader.
