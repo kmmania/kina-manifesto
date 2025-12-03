@@ -9,40 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;500;600&display=swap"
           rel="stylesheet">
-    <style>
-        /* Custom Print Styles for PDF Generation */
-        @media print {
-            @page {
-                margin: 2cm;
-                size: A4;
-            }
-
-            body {
-                background-color: white !important;
-                color: black !important;
-                -webkit-print-color-adjust: exact;
-            }
-
-            .no-print {
-                display: none !important;
-            }
-
-            .print-break-inside-avoid {
-                break-inside: avoid;
-            }
-
-            .print-only {
-                display: block !important;
-            }
-        }
-
-        .print-only {
-            display: none;
-        }
-    </style>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#F8F8F8] text-[#333333]">
 <div id="root"></div>
+<script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
