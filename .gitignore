@@ -25,7 +25,6 @@ dist-ssr
 
 # Build output
 dist/
-*.local
 
 # Vite cache
 .vite/
