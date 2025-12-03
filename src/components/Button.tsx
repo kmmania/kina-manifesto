@@ -14,7 +14,7 @@ export const Button: React.FC<ButtonProps> = ({
                                                   style,
                                                   ...props
                                               }) => {
-    let baseStyles = "px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2";
+    const baseStyles = "px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2";
     let variantStyles = "";
 
     if (variant === 'primary') {
