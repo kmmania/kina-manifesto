@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {COLORS} from '../types';
 import {Modal} from './Modal';
 import {Mail} from 'lucide-react';
+import kinaLogo from '../assets/kina-logo.png';
 
 type ModalType = 'privacy' | 'terms' | 'contact' | null;
 
@@ -35,6 +36,7 @@ export const Footer: React.FC = () => {
             <div className="bg-white border-t border-gray-200 py-12 px-4 no-print">
                 <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
                     <div className="text-center md:text-left">
+                        <img src={kinaLogo} alt="KINA Logo" className="h-10 w-auto object-contain"/>
                         <h3 className="font-bold text-xl mb-2" style={{color: COLORS.textPrimary}}>KINA</h3>
                         <p className="text-gray-500 text-sm">The AI Running Companion That Feels Your Every Stride</p>
                     </div>
