@@ -51,13 +51,6 @@ export const Header: React.FC = () => {
                         <Download size={16}/>
                         <span className="hidden sm:inline">Download PDF</span>
                     </Button>
-
-                    <Button
-                        className="!py-2 !px-4 text-sm"
-                        onClick={() => window.location.href = 'https://kina-landing-page.vercel.app/'}
-                    >
-                        Join Waitlist
-                    </Button>
                 </div>
             </div>
         </header>
