@@ -1,6 +1,5 @@
 import React from 'react';
 import {Analytics} from '@vercel/analytics/react';
-import {SpeedInsights} from '@vercel/speed-insights/react';
 import {Header} from './components/Header';
 import {ManifestoContent} from './components/ManifestoContent';
 import {WaitlistBanner} from './components/WaitlistBanner';
@@ -20,7 +19,6 @@ const App: React.FC = () => {
 
             {/* Vercel Monitoring */}
             <Analytics/>
-            <SpeedInsights/>
         </div>
     );
 };
