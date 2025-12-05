@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
 
                     <Button
                         className="!py-2 !px-4 text-sm"
-                        onClick={() => window.location.href = '#waitlist'}
+                        onClick={() => window.location.href = 'https://kina-landing-page.vercel.app/'}
                     >
                         Join Waitlist
                     </Button>
