@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Download} from 'lucide-react';
 import {COLORS} from '../types';
 import {Button} from './Button';
+import kinaLogo from '../assets/kina-logo.png';
 
 export const Header: React.FC = () => {
     const [scrollProgress, setScrollProgress] = useState(0);
@@ -34,6 +35,7 @@ export const Header: React.FC = () => {
 
             <div className="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
                 <div className="flex items-center gap-3">
+                    <img src={kinaLogo} alt="KINA Logo" className="h-8 w-auto object-contain"/>
                     <span className="font-bold text-xl tracking-tight text-[#333333]">KINA</span>
                     <span className="hidden sm:inline-block w-px h-4 bg-gray-300 mx-2"></span>
                     <span className="hidden sm:inline-block text-sm text-gray-500 font-medium">The 2025 Athlete Manifesto</span>
