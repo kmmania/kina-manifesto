@@ -1,5 +1,7 @@
 # KINA - The 2025 Athlete Manifesto Reader
 
+![KINA Banner](./public/og-image.png)
+
 An interactive, editorial-style web application designed to present the **"Are You the 2025 Athlete?"** manifesto.
 
 This project transforms the static manifesto content into an engaging digital experience, bridging the gap between a
@@ -69,12 +71,12 @@ npm run build
 
 The application uses a specific color palette defined in `src/types.ts` and applied via Tailwind:
 
-| Color | Hex | Usage |
-|-------|-----|-------|
-| **Blue** | `#6A8EAE` | Primary actions, highlights |
-| **Green** | `#99C794` | Secondary accents, progress bar |
-| **Dark Grey** | `#333333` | Primary text |
-| **Off White** | `#F8F8F8` | Page background |
+| Color         | Hex       | Usage                           |
+|---------------|-----------|---------------------------------|
+| **Blue**      | `#6A8EAE` | Primary actions, highlights     |
+| **Green**     | `#99C794` | Secondary accents, progress bar |
+| **Dark Grey** | `#333333` | Primary text                    |
+| **Off White** | `#F8F8F8` | Page background                 |
 
 ## 📂 Project Structure
 
