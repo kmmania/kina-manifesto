@@ -93,7 +93,7 @@ src/
 
 ## 📄 License & Copyright
 
-**Content:** © 2025 - Dac Linh Giao NGUYEN / KM Mania Research.  
+**Content:** © 2025 - Dac Linh Giao NGUYEN / KM Mania.  
 *The text content is protected by copyright but authorized for distribution in its entirety.*
 
 **Code:** This repository is the technical implementation of the KINA Manifesto Reader.
