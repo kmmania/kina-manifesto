@@ -2,7 +2,6 @@ import React from 'react';
 import {Analytics} from '@vercel/analytics/react';
 import {Header} from './components/Header';
 import {ManifestoContent} from './components/ManifestoContent';
-import {WaitlistBanner} from './components/WaitlistBanner';
 import {Footer} from './components/Footer';
 
 const App: React.FC = () => {
@@ -12,7 +11,6 @@ const App: React.FC = () => {
 
             <main className="flex-grow pt-16">
                 <ManifestoContent/>
-                <WaitlistBanner/>
             </main>
 
             <Footer/>
