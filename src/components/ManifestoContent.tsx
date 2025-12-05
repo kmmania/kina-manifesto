@@ -50,11 +50,16 @@ export const ManifestoContent: React.FC = () => {
                     The Manifesto. Discover the challenges of a new era and the keys to enlightened performance.
                 </p>
 
-                <div
-                    className="flex flex-col md:flex-row justify-center items-center gap-4 text-sm font-sans text-gray-500">
-                    <div><span className="font-bold text-gray-700">Date:</span> {DATE}</div>
-                    <div className="hidden md:block w-1 h-1 bg-gray-400 rounded-full"></div>
-                    <div><span className="font-bold text-gray-700">Author:</span> {AUTHOR}</div>
+                <div className="flex flex-col items-center gap-3">
+            <span className="font-sans font-bold uppercase tracking-[0.2em] text-sm md:text-base"
+                  style={{color: COLORS.primary}}>
+                The KINA Publication
+            </span>
+                    <div className="text-gray-400 text-sm font-sans flex items-center gap-2">
+                        <span>By {AUTHOR}</span>
+                        <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                        <span>{DATE}</span>
+                    </div>
                 </div>
             </div>
 
@@ -336,7 +341,7 @@ export const ManifestoContent: React.FC = () => {
             {/* Footer */}
             <footer className="pt-12 border-t border-gray-200 text-sm text-gray-500 print-break-inside-avoid">
                 <h4 className="font-bold text-gray-700 mb-2">Copyright And Sharing</h4>
-                <p className="mb-4">© 2025 - {AUTHOR} / KM Mania Research.</p>
+                <p className="mb-4">© 2025 - {AUTHOR} / KM Mania.</p>
                 <p className="mb-4 leading-relaxed">
                     This document is protected by copyright. However, I believe in sharing knowledge. You are authorized
                     and encouraged to distribute this manifesto, provided it is transmitted in its entirety, without
