@@ -327,7 +327,7 @@ export const ManifestoContent: React.FC = () => {
                         first step to becoming who you want to be.</strong>
                 </p>
 
-                <a href="#quiz" className="inline-block no-underline">
+                <a href="https://tally.so/r/Zj8eW5" target='_blank' className="inline-block no-underline">
                     <button
                         className="bg-white px-8 py-4 rounded-lg font-bold text-lg shadow-lg hover:bg-gray-50 transition-colors flex items-center gap-2"
                         style={{color: COLORS.primary}}>
