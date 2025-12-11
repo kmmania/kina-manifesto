@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import {COLORS} from '../types';
 import {Modal} from './Modal';
-import {Mail} from 'lucide-react';
 import kinaLogo from '../assets/kina-logo.png';
 
-type ModalType = 'privacy' | 'terms' | 'contact' | null;
+type ModalType = 'privacy' | 'terms' | null;
 
 export const Footer: React.FC = () => {
     const [activeModal, setActiveModal] = useState<ModalType>(null);
-    const [contactFormStatus, setContactFormStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
 
     const openModal = (type: ModalType) => (e: React.MouseEvent) => {
         e.preventDefault();
@@ -17,18 +15,6 @@ export const Footer: React.FC = () => {
 
     const closeModal = () => {
         setActiveModal(null);
-        if (contactFormStatus === 'success') {
-            setTimeout(() => setContactFormStatus('idle'), 500); // Reset after close
-        }
-    };
-
-    const handleContactSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setContactFormStatus('submitting');
-        // Simulate API call
-        setTimeout(() => {
-            setContactFormStatus('success');
-        }, 1500);
     };
 
     return (
@@ -47,9 +33,6 @@ export const Footer: React.FC = () => {
                         </button>
                         <button onClick={openModal('terms')}
                                 className="hover:text-gray-900 transition-colors text-left">Terms of Use
-                        </button>
-                        <button onClick={openModal('contact')}
-                                className="hover:text-gray-900 transition-colors text-left">Contact
                         </button>
                     </div>
                 </div>
@@ -109,16 +92,7 @@ export const Footer: React.FC = () => {
                     <section>
                         <h4 className="font-bold text-gray-900 mb-2">5. Your Rights</h4>
                         <p>You can unsubscribe from our emails at any time by clicking the "unsubscribe" link in the
-                            footer of our emails. If you wish to have your data completely deleted, please contact us at
-                            support@kina.run.</p>
-                    </section>
-
-                    <section>
-                        <h4 className="font-bold text-gray-900 mb-2">6. Contact</h4>
-                        <p>For any questions about this policy, please <button onClick={() => setActiveModal('contact')}
-                                                                               className="text-blue-600 underline font-medium hover:text-blue-800">contact
-                            us here</button>.
-                        </p>
+                            footer of our emails.</p>
                     </section>
                 </div>
             </Modal>
@@ -179,99 +153,6 @@ export const Footer: React.FC = () => {
                             its conflict of law provisions.</p>
                     </section>
                 </div>
-            </Modal>
-
-            {/* Contact Modal */}
-            <Modal
-                isOpen={activeModal === 'contact'}
-                onClose={closeModal}
-                title=""
-            >
-                <div className="text-center sm:text-left mb-6">
-                    <div className="flex flex-col sm:flex-row items-center gap-4 mb-2">
-                        <div
-                            className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center text-blue-500">
-                            <Mail size={24}/>
-                        </div>
-                        <div>
-                            <h3 className="text-2xl font-bold text-gray-900">Contact Support</h3>
-                            <p className="text-gray-500">We're here to help.</p>
-                        </div>
-                    </div>
-                </div>
-
-                {contactFormStatus === 'success' ? (
-                    <div className="text-center py-12">
-                        <div
-                            className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7"/>
-                            </svg>
-                        </div>
-                        <h4 className="text-xl font-bold text-gray-900 mb-2">Message Sent!</h4>
-                        <p className="text-gray-500 mb-6">Thank you for reaching out. We'll get back to you as soon as
-                            possible.</p>
-                        <button
-                            onClick={closeModal}
-                            className="px-6 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg font-medium transition-colors"
-                        >
-                            Close
-                        </button>
-                    </div>
-                ) : (
-                    <form onSubmit={handleContactSubmit} className="space-y-4">
-                        <div>
-                            <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-1">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all bg-gray-50 focus:bg-white"
-                                placeholder="Your Name"
-                                required
-                            />
-                        </div>
-
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-1">Email</label>
-                            <input
-                                type="email"
-                                id="email"
-                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all bg-gray-50 focus:bg-white"
-                                placeholder="your@email.com"
-                                required
-                            />
-                        </div>
-
-                        <div>
-                            <label htmlFor="message"
-                                   className="block text-sm font-bold text-gray-700 mb-1">Message</label>
-                            <textarea
-                                id="message"
-                                rows={4}
-                                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 outline-none transition-all bg-gray-50 focus:bg-white resize-none"
-                                placeholder="How can we help?"
-                                required
-                            />
-                        </div>
-
-                        <button
-                            type="submit"
-                            disabled={contactFormStatus === 'submitting'}
-                            className="w-full py-4 rounded-lg font-bold text-white text-lg shadow-sm hover:opacity-90 transition-all flex items-center justify-center gap-2 mt-4"
-                            style={{backgroundColor: COLORS.secondary}}
-                        >
-                            {contactFormStatus === 'submitting' ? (
-                                <>
-                                    <div
-                                        className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                                    Sending...
-                                </>
-                            ) : (
-                                'Send Message'
-                            )}
-                        </button>
-                    </form>
-                )}
             </Modal>
         </>
     );
